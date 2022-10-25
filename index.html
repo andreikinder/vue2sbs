@@ -6,37 +6,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+
+	<style>
+		.is-loading {
+			color: red;
+		}
+	</style>
 </head>
 
 <body>
 
 	<div id="root">
-		<ul>
-			<li v-for="name in names" v-text="name"></li>
-		</ul>
 
-		<input type="text" id="input" v-model="newName">
-		<button id="button" @click="addName">Add name</button>
+		<button :class="{ 'is-loading' : isLoading}" @click="toggleClass">
+			Tooggle me
+		</button>
+
 	</div>
 
 	<script>
 		var app = new Vue({
 			el: "#root",
 			data: {
-				newName: '',
-				names: ['Joe', 'Mary', 'Jane', 'Jack']
+				isLoading: false
 			},
 			methods: {
-				addName() {
-					this.names.push(this.newName)
-					this.newName = ''
-
+				toggleClass() {
+					this.isLoading = !(this.isLoading)
 				}
 			}
 		})
-
-
-
 	</script>
 </body>
 
