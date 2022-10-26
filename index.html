@@ -7,36 +7,18 @@
 	<title>Document</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
 
-	<style>
-		.is-loading {
-			color: red;
-		}
-	</style>
 </head>
 
 <body>
 
 	<div id="root">
 
-		<button :class="{ 'is-loading' : isLoading}" @click="toggleClass">
-			Tooggle me
-		</button>
-
+		<task>Go to the work</task>
+		<task>Go to the home</task>
+		<task>Go to the coffee</task>
 	</div>
 
-	<script>
-		var app = new Vue({
-			el: "#root",
-			data: {
-				isLoading: false
-			},
-			methods: {
-				toggleClass() {
-					this.isLoading = !(this.isLoading)
-				}
-			}
-		})
-	</script>
+	<script src="main.js"></script>
 </body>
 
 </html>
