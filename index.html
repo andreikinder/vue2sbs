@@ -5,15 +5,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	</link>
+
+	<style>
+		body {
+			padding-top: 40px;
+		}
+	</style>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
 
 </head>
 
 <body>
 
-	<div id="root">
+	<div id="root" class="container">
 
-		<task-list></task-list>
+		<message title="Hello World" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></message>
+		<message title="Hello Universe" body="Bla bla bla."></message>
 	</div>
 
 	<script src="main.js"></script>
