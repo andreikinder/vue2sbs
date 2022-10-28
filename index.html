@@ -21,9 +21,11 @@
 <body>
 
 	<div id="root" class="container">
+		<modal v-show="showModal" @close="showModal = false">
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, architecto.
+		</modal>
 
-		<message title="Hello World" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></message>
-		<message title="Hello Universe" body="Bla bla bla."></message>
+		<button @click="showModal=true">Show modal</button>
 	</div>
 
 	<script src="main.js"></script>
