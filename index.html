@@ -21,11 +21,17 @@
 <body>
 
 	<div id="root" class="container">
-		<modal v-show="showModal" @close="showModal = false">
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, architecto.
-		</modal>
-
-		<button @click="showModal=true">Show modal</button>
+		<tabs>
+			<tab name="About us" :selected="true">
+				<h1>Here is content of content for the about us</h1>
+			</tab>
+			<tab name="About Our Cultute">
+				<h1>Here is content of content for the about our culture</h1>
+			</tab>
+			<tab name="About our vision">
+				<h1>Here is content of content fot the about our vision</h1>
+			</tab>
+		</tabs>
 	</div>
 
 	<script src="main.js"></script>
