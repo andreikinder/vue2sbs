@@ -16,7 +16,6 @@ Vue.component('modal',{
 			<slot name="footer">
 				<button class="button is-success">Okey</button>
 			</slot>
-		
 		</footer>
 		</div>
  	</div>`
