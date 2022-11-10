@@ -15,7 +15,12 @@ class Errors {
 	}
 
 	clear(field) {
-		delete this.errors[field]
+		if (field) {
+			delete this.errors[field]
+			return 
+		} 
+
+		 this.errors = {}
 	}
 
 	has(field) {
@@ -26,27 +31,67 @@ class Errors {
 	}
 }
 
+class Form {
+
+	constructor(data)
+	{
+		this.OriginalData = data
+
+		for (let field in data) {
+			this[field] = data[field]
+		}
+
+		this.errors =  new Errors()
+	}
+
+	reset() {
+		for (let field in this.OriginalData) {
+			this[field] = ''
+		}
+	}
+
+	data() {
+		let data = Object.assign({}, this);
+		delete data.OriginalData
+		delete data.errors
+
+		return data
+	}
+
+	submit(requestType, url) {
+		axios[requestType](url, this.data() )
+		.then(this.onSuccess.bind(this))
+		.catch(this.onFail.bind(this))
+	}
+
+	onSuccess(response) {
+		///response => this.onSuccess(response)
+
+		alert(response.data.message)
+		this.errors.clear()
+		// this.name=''
+		// this.description=''
+		 this.reset()
+	}
+	onFail(error) {
+		//this.errors.record( error.response.data.errors)
+		this.errors.record( error.response.data.errors)
+	}
+}
+
 new Vue({
 	el: '#root',
 	data : {
-		name : '',
-		description : '',
-		errors : new Errors()
+		form : new Form({
+			name : '',
+			description : ''
+		}),
+		 
 	},
 
 	methods : {
 		onSubmit() {
-			axios.post('/projects', this.$data )
-			.then(response => this.onSuccess(response))
-			.catch(error =>  	this.errors.record( error.response.data.errors))
+			this.form.submit('post', '/projects')
 		},
-		onSuccess(response)
-		{
-			alert('success')
-			this.name=''
-			this.description=''
-			// form.reset
-		}
 	}
-	// }
 })

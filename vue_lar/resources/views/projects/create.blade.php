@@ -36,23 +36,23 @@
 			  <hr>
 				 <div class="columns mt-5">
 					<div class="column is-half">
-						<form action="" @submit.prevent="onSubmit" @keydown="errors.clear($event.target.name)">
+						<form action="" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
 							<div class="field">
 								<label for="" class="label">Project name</label>
 								<div class="control">
-									<input type="text" name="name" class="input" v-model="name" >
+									<input type="text" name="name" class="input" v-model="form.name" >
 								</div>
-								<span v-if="errors.has('name')" class="help is-danger" v-text="errors.get('name')"></span>
+								<span v-if="form.errors.has('name')" class="help is-danger" v-text="form.errors.get('name')"></span>
 							</div><!-- /.form-control -->
 							<div class="field">
 								<label for="" class="label">Project description</label>
 								<div class="control">
-									<input type="text" name="description" class="input" v-model="description">
-									<span class="help is-danger" v-text="errors.get('description')"></span>
+									<input type="text" name="description" class="input" v-model="form.description">
+									<span  v-if="form.errors.has('description')" class="help is-danger" v-text="form.errors.get('description')"></span>
 								</div>
 							</div><!-- /.form-control -->
 						
-							<button type="submit" class="button is-primary" :disabled="errors.any()">
+							<button type="submit" class="button is-primary" :disabled="form.errors.any()">
 								Create 
 							 </button>
 						 
