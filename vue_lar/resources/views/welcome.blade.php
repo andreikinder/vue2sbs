@@ -19,16 +19,14 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
-        </style>
+		  </style>
+		  <style href="./css/style.css"></style>
     </head>
     <body class="antialiased">
 	 <div id="root">
-			<ul class="list-unstyled">
-				<li v-for="skill in skills" >@{{skill}}</li>
-			</ul>
+		 <notification>
+		 </notification>
 	 </div>
-	 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	 <script src="./js/app.js"></script>
   
     </body>

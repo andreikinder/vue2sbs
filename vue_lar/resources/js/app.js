@@ -1,29 +1,16 @@
 
-import Vue from "vue";
-import axios from "axios"
-import Form from "./core/Form"
+import  Vue from "vue";
+// import axios from "axios"
+ import Notification from './components/Notification'
 
 
-window.axios = axios
-window.Form = Form
+// window.axios = axios
+
 
 new Vue({
 	el: '#root',
-	data : {
-		form : new Form({
-			name : '',
-			description : ''
-		}),
-		 
-	},
+	components : {Notification}
 
-	methods : {
-		onSubmit() {
-			this.form.post('/projects')
-			.then(data => console.log(data))
-			.catch(errors => console.log(errors))
-		},
-	}
 })
 
 // alert('fdsfds')
