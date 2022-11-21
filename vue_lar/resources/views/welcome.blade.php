@@ -23,10 +23,15 @@
 		  <style href="./css/style.css"></style>
     </head>
     <body class="antialiased">
-	 <div id="root">
-		 <notification>
-		 </notification>
+	 <div id="one">
+		 <h1>@{{user.name}}</h1>
+		
 	 </div>
+	 <div id="two">
+		 <h1>
+			@{{user.name}}
+		 </h1>
+	</div>
 	 <script src="./js/app.js"></script>
   
     </body>

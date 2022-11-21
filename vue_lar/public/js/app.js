@@ -46,10 +46,29 @@ __webpack_require__.r(__webpack_exports__);
 
 // window.axios = axios
 
+// new Vue({
+// 	el: '#root',
+// 	components : {Notification}
+
+// })
+
+var source = {
+  user: {
+    name: 'John Doe'
+  }
+};
 new vue__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  el: '#root',
-  components: {
-    Notification: _components_Notification__WEBPACK_IMPORTED_MODULE_0__["default"]
+  el: '#one',
+  data: {
+    foo: 'bar',
+    shared: source
+  }
+});
+new vue__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  el: '#two',
+  data: {
+    foo: 'oneanoter bar',
+    shared: source
   }
 });
 

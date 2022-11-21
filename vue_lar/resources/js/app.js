@@ -7,10 +7,33 @@ import  Vue from "vue";
 // window.axios = axios
 
 
-new Vue({
-	el: '#root',
-	components : {Notification}
+// new Vue({
+// 	el: '#root',
+// 	components : {Notification}
 
+// })
+
+let source = {
+	user : {
+		name : 'John Doe'
+	}
+}
+
+new Vue({
+	el: '#one',
+	data:  {
+		foo : 'bar',
+		shared: source
+	} 
+})
+
+
+new Vue({
+	el: '#two',
+	data: {
+		foo : 'oneanoter bar',
+		shared :	source
+	}
 })
 
 // alert('fdsfds')
